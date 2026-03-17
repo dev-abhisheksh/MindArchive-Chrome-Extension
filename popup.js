@@ -25,14 +25,13 @@ saveBtn.addEventListener("click", async () => {
                     return (title + "\n" + desc).trim();
                 }
 
-                // ❌ remove junk elements
+                //faaltu cheejhe nhi chahiye bro
                 document.querySelectorAll(`
     nav, footer, aside, script, style,
     header, form, button, input,
     [role="navigation"], [role="complementary"]
   `).forEach(el => el.remove());
 
-                // ❌ remove hyperlinks but keep text
                 document.querySelectorAll("a").forEach(a => {
                     const span = document.createElement("span");
                     span.innerText = a.innerText;
@@ -52,7 +51,7 @@ saveBtn.addEventListener("click", async () => {
         const { token } = await chrome.storage.local.get("token")
         if (!token) {
             statuss.innerText = "Login required";
-            loginLink.style.display = "block"; // show link
+            loginLink.style.display = "block";
             return;
         }
 
