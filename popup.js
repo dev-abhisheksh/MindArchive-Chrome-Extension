@@ -22,29 +22,16 @@ saveBtn.addEventListener("click", async () => {
                 if (isYoutube) {
                     const title = document.querySelector("h1")?.innerText || "";
                     const desc = document.querySelector("#description")?.innerText || "";
-                    return (title + "\n" + desc).trim();
+                    return (title + "\n" + desc).slice(0, 2000);
                 }
 
-                //faaltu cheejhe nhi chahiye bro
-                document.querySelectorAll(`
-    nav, footer, aside, script, style,
-    header, form, button, input,
-    [role="navigation"], [role="complementary"]
-  `).forEach(el => el.remove());
-
-                document.querySelectorAll("a").forEach(a => {
-                    const span = document.createElement("span");
-                    span.innerText = a.innerText;
-                    a.replaceWith(span);
-                });
-
                 const article = document.querySelector("article");
-                if (article) return article.innerText;
+                if (article) return article.innerText.slice(0, 5000);
 
                 const main = document.querySelector("main");
-                if (main) return main.innerText;
+                if (main) return main.innerText.slice(0, 5000);
 
-                return document.body.innerText;
+                return document.body.innerText.slice(0, 5000);
             }
         })
 
