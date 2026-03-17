@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "MindArchive Saver",
+  "version": "1.0",
+
+  "permissions": ["tabs", "activeTab", "scripting", "storage"],
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+  {
+    "matches": [
+      "http://localhost:5173/*",
+      "https://mind-archive-gamma.vercel.app/*"
+    ],
+    "js": ["content.js"]
+  }
+],
+
+  "background": {
+  "service_worker": "background.js"
+}
+}
