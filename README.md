@@ -79,7 +79,7 @@ MindArchive-ChromeExtension
 * Try again
 
 ---
-
+    
 ## 🧠 How it works (simple)
 
 ```

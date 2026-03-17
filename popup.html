@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MindArchive Saver</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                <span>MindArchive</span>
+            </div>
+        </header>
 
-    <h3>Save to MindArchive</h3>
-    <button id="saveBtn">Save</button>
-    <p id="status"></p>
+        <section class="content">
+            <h3>Save Current Page</h3>
+            <p class="description">Add this site to your knowledge graph.</p>
+            
+            <button id="saveBtn">
+                <span class="btn-text">Save to Archive</span>
+            </button>
+            
+            <p id="status"></p>
 
-    <a id="loginLink" href="https://mind-archive-gamma.vercel.app/login" target="_blank" style="display:none; color:#22c55e;">
-        Go to Login →
-    </a>
+            <a id="loginLink" href="https://mind-archive-gamma.vercel.app/login" target="_blank" class="action-link secondary">
+                Please Login to Continue →
+            </a>
+        </section>
 
+        <footer>
+            <a href="https://mind-archive-gamma.vercel.app/" target="_blank" class="action-link">
+                View Dashboard
+            </a>
+        </footer>
+    </div>
     <script src="popup.js"></script>
 </body>
-
 </html>
