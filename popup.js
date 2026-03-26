@@ -2,6 +2,15 @@ const saveBtn = document.getElementById("saveBtn");
 const statuss = document.getElementById("status");
 const loginLink = document.getElementById("loginLink");
 
+// Check login status on load
+chrome.storage.local.get("token", ({ token }) => {
+    if (token) {
+        loginLink.style.display = "none";
+    } else {
+        loginLink.style.display = "block";
+    }
+});
+
 saveBtn.addEventListener("click", async () => {
     try {
         statuss.innerText = "saving...";
