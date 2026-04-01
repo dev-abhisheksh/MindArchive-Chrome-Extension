@@ -40,7 +40,6 @@ saveBtn.addEventListener("click", async () => {
             type = "image";
         }
 
-        // 3. Extract text (only when needed)
         let result = "";
 
         if (type === "article" || type === "video") {
@@ -55,6 +54,9 @@ saveBtn.addEventListener("click", async () => {
                         return (title + "\n" + desc).slice(0, 2000);
                     }
 
+                    const wiki = document.querySelector("#mw-content-text");
+                    if (wiki) return wiki.innerText.slice(0, 5000);
+
                     const article = document.querySelector("article");
                     if (article) return article.innerText.slice(0, 5000);
 
@@ -68,7 +70,6 @@ saveBtn.addEventListener("click", async () => {
             result = response[0].result;
         }
 
-        // 4. Get token
         const { token } = await chrome.storage.local.get("token");
 
         if (!token) {
