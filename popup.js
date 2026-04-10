@@ -90,7 +90,7 @@ saveBtn.addEventListener("click", async () => {
         };
 
         // 6. Send request
-        const res = await fetch("https://mind-archive-i9j2.onrender.com/api/content/create", {
+        const res = await fetch("https://mindarchive.onrender.com/api/content/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
